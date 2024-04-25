@@ -27,7 +27,7 @@
             username = ""
             password = ""
             toast.success("Success!")
-            goto("/dashboard")
+            goto("/homepage")
 
         } else {
             toast.error("Error logging in")
