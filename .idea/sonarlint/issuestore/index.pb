@@ -1,14 +1,10 @@
 
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-G
-src/routes/+page.svelte,0\c\0cc7436e43646401331b342eb4c6db357ce6f5a9
 @
 src/lib/index.js,d\1\d16cddc9c406410c0cf359b96f6d58384b11d05d
 B
 src/enums/enums.js,9\b\9bd660927986ac07908b065240d3b14895faeb0f
-O
-src/routes/login/+layout.svelte,5\0\50a5822046d3fccd01917bd05a592c82d72fb74f
 M
 src/routes/login/+page.svelte,3\0\30afc255620d9af551ec4b3180d1c6ad5713a268
 <
@@ -29,3 +25,11 @@ A
 -.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
 S
 #.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
+E
+src/routes/styles.css,2\8\284fe3a84d3e95eface8590ac721d72a4f54e927
+I
+src/auth/TokenHandling.js,2\e\2efdf19b9407b167dc620322921afeb054d184a4
+G
+src/routes/+page.svelte,0\c\0cc7436e43646401331b342eb4c6db357ce6f5a9
+6
+.npmrc,1\2\12453d06e6e35287172e482940b954ba12dc25a2
