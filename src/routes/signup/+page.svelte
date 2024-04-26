@@ -1,44 +1,40 @@
-<script>
-    import {URI} from "/src/enums/enums.js";
+<script lang="ts">
+
+    import {URI} from '../../enums/enums';
     import {saveTokenWithAutoDelete} from "../../auth/TokenHandling.js";
-    import {page} from "$app/stores";
     import {goto} from "$app/navigation";
     import toast, {Toaster} from 'svelte-french-toast';
 
     let username = ""
     let password = ""
-
     async function handleSubmit() {
-        const credentials = `${username}:${password}`
-        const base64Credentials = btoa(credentials)
-        const response = await fetch(URI.LOGIN, {
-            method: 'POST',
+
+
+        const response = await fetch(URI.SIGNUP, {
+            method: "POST",
             headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Basic ${base64Credentials}`
+                "Content-type": "application/json"
             },
-            body: JSON.stringify({username, password})
+            body: JSON.stringify({
+                username, password
+            }),
+
         })
 
+
         if (response.ok) {
-            const responseData = await response.json()
-            const token = responseData['access_token']
-            saveTokenWithAutoDelete(token)
-            username = ""
             password = ""
-            toast.success("Success!")
-            await goto("/homepage")
-
+            username = ""
+            toast.success("Sign-up Success!")
+            goto("/login")
         } else {
-            toast.error("Error logging in")
+            const responseJson = await response.json()
+            toast.error(responseJson["Response"])
         }
-        console.error("Error logging in")
-
 
     }
-
-
 </script>
+
 <style>
     /* Container styling */
     .container {
@@ -120,7 +116,7 @@
 <div class="container">
     <div class="form-container">
         <form on:submit|preventDefault={handleSubmit}>
-            <h2>Login</h2>
+            <h2>Create An Account</h2>
 
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" placeholder="Enter your username" bind:value={username}>
@@ -131,7 +127,7 @@
             <button type="submit">Login</button>
 
             <div class="switch-pages">
-                <a href="/signup">Don't have an account? Sign up here</a>
+                <a href="/login">Don't have an account? Sign up here</a>
             </div>
         </form>
     </div>
