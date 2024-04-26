@@ -30,7 +30,7 @@
     }
 
     li {
-        font-family: "OCR A Extended", monospace;
+        font-family: "Nirmala UI", monospace;
         text-align: center;
         font-weight: 900;
         font-size: xxx-large;

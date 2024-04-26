@@ -12,10 +12,12 @@
     --color-text: rgb(0, 0, 0);
     --column-width: 42rem;
     --column-margin-top: 4rem;
-    font-family: "OCR A Extended",sans-serif;
+    font-family: Digital, sans-serif;
     color: var(--color-text);
     min-width: fit-content;
 }
+
+
 
 body {
     min-height: 100vh;
@@ -88,9 +90,10 @@ input{
     font-family: inherit;
 }
 button{
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgb(0, 149, 255);
     color: whitesmoke;
-    max-height: min-content;
+    max-height: fit-content;
+    min-width: max-content;
 }
 
 button:focus:not(:focus-visible) {
