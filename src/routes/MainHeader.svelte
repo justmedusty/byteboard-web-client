@@ -30,11 +30,10 @@
     }
 
     li {
-        font-family: "Nirmala UI", monospace;
         text-align: center;
         font-weight: 900;
         font-size: xxx-large;
-        text-shadow: 8px 8px 12px rgb(0, 0, 0);
+        text-shadow: 8px 8px 12px rgb(255, 255, 255);
         padding: 10px;
         margin: 10px;
         color: #000;

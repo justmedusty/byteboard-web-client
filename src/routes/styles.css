@@ -12,11 +12,11 @@
     --color-text: rgb(0, 0, 0);
     --column-width: 42rem;
     --column-margin-top: 4rem;
-    font-family: Digital, sans-serif;
+    font-family: bitwise, sans-serif;
+    font-size: large;
     color: var(--color-text);
     min-width: fit-content;
 }
-
 
 
 body {
@@ -94,6 +94,7 @@ button{
     color: whitesmoke;
     max-height: fit-content;
     min-width: max-content;
+    font-family: bitwise;
 }
 
 button:focus:not(:focus-visible) {
