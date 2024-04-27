@@ -2,6 +2,7 @@
 
     import Tabs from "../../components/Tabs.svelte";
     import {deleteToken} from "../../auth/TokenHandling.js";
+    import PostsFeed from "../../components/PostsFeed.svelte";
 
 
     function handleLogout() {
@@ -11,28 +12,32 @@
 
     let items = [
         {
-            label: "Your Files",
+            label: "Home",
             value: 1,
-            component: ""
+            component: PostsFeed
         },
         {
-            label: "Account Settings",
+            label: "Private Messages",
             value: 2,
             component: ""
         },
         {
-            label: "Public Key Settings",
+            label: "My Profile",
             value: 3,
             component: ""
         },
         {
-            label: "About",
+            label: "Notifications",
             value: 4,
+            component: ""
+        },
+        {
+            label: "About",
+            value: 5,
             component: ""
         }
     ];
 </script>
-
 <style>
     /* Container styling */
     .container {
@@ -40,7 +45,6 @@
         justify-content: center;
         align-items: center;
         height: 100vh;
-        /* Set a minimum width to ensure it's not too narrow */
         min-width: 100vh;
         background-color: rgba(242, 242, 242, 0);
     }
@@ -48,13 +52,20 @@
     /* Form styling */
     .form-container {
         min-height: 80vh;
-        min-width: 80vh; /* Corrected value */
+        min-width: 80vh;
         padding: 20px;
         border-radius: 8px;
         background-color: rgb(255, 255, 255);
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
+    .logout-footer {
+        text-align: center; /* Center the contents horizontally */
+    }
+
+    .logout {
+        min-width: 15vh;
+    }
 </style>
 
 <div class="container">
