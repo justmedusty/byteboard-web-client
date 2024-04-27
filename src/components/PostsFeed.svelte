@@ -1,17 +1,31 @@
-
 <script>
     import { onMount } from 'svelte';
     import { writable } from 'svelte/store';
-    import {URI} from "../enums/enums.js";
+    import { URI } from "../enums/enums.js";
 
-    let initialPosts = [
-        { id: 1, title: 'Post 1', content: 'Content of post 1' },
-        { id: 2, title: 'Post 2', content: 'Content of post 2' },
-        { id: 3, title: 'Post 3', content: 'Content of post 3' }
-    ];
+    class Post {
+        constructor(id, posterUserName, topic, timeStamp, title, content, likeCount, dislikeCount, likedByMe, dislikedByMe, lastedEdited) {
+            this.id = id;
+            this.posterUserName = posterUserName;
+            this.topic = topic;
+            this.timeStamp = timeStamp;
+            this.title = title;
+            this.content = content;
+            this.likeCount = likeCount;
+            this.dislikeCount = dislikeCount;
+            this.likedByMe = likedByMe;
+            this.dislikedByMe = dislikedByMe;
+            this.lastedEdited = lastedEdited;
+        }
+    }
 
+    // Generate 25 sample posts
+    let samplePosts = [];
+    for (let i = 1; i <= 25; i++) {
+        samplePosts.push(new Post(i, `User${i}`, `Topic ${i}`, '2024-04-27', `Post ${i}`, `Content of post ${i}`, i * 2, i, i % 2 === 0, i % 3 === 0, null));
+    }
 
-    const posts = writable(initialPosts);
+    const posts = writable(samplePosts);
 
     const searchTerm = writable('');
 
@@ -25,7 +39,7 @@
         try {
             const response = await fetch(URI.SEARCH_POSTS + `?search=${term}`);
             if (!response.ok) {
-               alert("not okay")
+                alert("not okay")
             }
             const data = await response.json();
             posts.set(data.posts);
@@ -42,11 +56,13 @@
 <style>
 
     .post-view {
-        display: flex;
+        display: list-item;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        min-width: 60vb;
+        overflow-y: auto;
+        min-width: 60vw;
+        margin: 50px;
     }
 
     input[type="text"] {
@@ -61,11 +77,11 @@
         list-style-type: none;
         padding: 0;
         text-align: center;
+        max-height: max-content;
     }
 
     li {
         margin-bottom: 20px;
-        min-width: 55vh;
         padding: 20px;
         border: 1px solid #ccc;
         border-radius: 5px;
@@ -77,9 +93,11 @@
     }
 
     p {
-        color: #666;
+        color: #000000;
     }
 </style>
+
+
 
 <div class="post-view">
 
@@ -89,7 +107,10 @@
         {#each $posts.filter(filterPosts) as post}
             <li>
                 <h3>{post.title}</h3>
+                <p>{post.posterUserName}</p>
+                <p>{post.topic}</p>
                 <p>{post.content}</p>
+
             </li>
         {/each}
     </ul>

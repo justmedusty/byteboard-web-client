@@ -15,9 +15,6 @@
 
     </main>
 
-    <footer>
-        <p>Visit <a style="color: blue" href="https://github.com/justmedusty">My Github</a></p>
-    </footer>
 </div>
 
 <style>

@@ -41,21 +41,22 @@
 <style>
     /* Container styling */
     .container {
-        display: flex;
+        display: list-item;
         justify-content: center;
         align-items: center;
-        height: 100vh;
+        height: max-content;
         min-width: 100vh;
         background-color: rgba(242, 242, 242, 0);
+
     }
 
     /* Form styling */
     .form-container {
-        min-height: 80vh;
+        height: 80vh;
         min-width: 80vh;
         padding: 20px;
         border-radius: 8px;
-        background-color: rgb(255, 255, 255);
+        background-color: rgba(255, 255, 255, 0.54);
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
@@ -75,6 +76,9 @@
         <footer class ="logout-footer">
             <button class="logout" on:click={handleLogout}>Logout
             </button>
+            <footer>
+                <p>Visit <a style="color: blue" href="https://github.com/justmedusty">My Github</a></p>
+            </footer>
         </footer>
     </div>
 </div>

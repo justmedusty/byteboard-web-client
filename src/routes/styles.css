@@ -16,6 +16,7 @@
     font-size: large;
     color: var(--color-text);
     min-width: fit-content;
+    overflow-y: auto;
 }
 
 
@@ -115,11 +116,13 @@ button:focus:not(:focus-visible) {
         font-size: 4.4rem;
     }
 }
-
 .content-box {
-    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 50px;
-    width: 50vb;
+    width: auto; /* Let the width adjust based on content */
+    max-width: 80vw; /* Limit the maximum width to 80% of the viewport width */
     background-color: rgba(0, 0, 0, 0.13);
     border-radius: 8px;
     margin: 50px;
