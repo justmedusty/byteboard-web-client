@@ -3,6 +3,7 @@
     import Tabs from "../../components/Tabs.svelte";
     import {deleteToken} from "../../auth/TokenHandling.js";
     import PostsFeed from "../../components/PostsFeed.svelte";
+    import ProfileViewer from "../../components/ProfileViewer.svelte";
 
 
     function handleLogout() {
@@ -24,7 +25,7 @@
         {
             label: "My Profile",
             value: 3,
-            component: ""
+            component: ProfileViewer
         },
         {
             label: "Notifications",

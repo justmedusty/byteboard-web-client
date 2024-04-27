@@ -52,6 +52,11 @@
     onMount(() => {
         fetchPosts(); // Initial fetch when component is mounted
     });
+
+    // Function to check if the length of posts array is divisible by 25
+    function isDivisibleBy25() {
+        return $posts.length % 25 === 0;
+    }
 </script>
 
 <style>
@@ -79,6 +84,14 @@
         text-align: center;
         max-height: max-content;
     }
+
+    .load-more.visible {
+        display: block;
+    }
+
+    .load-more.hidden {
+        display: none;
+    }
 </style>
 
 <div class="post-view">
@@ -99,4 +112,6 @@
             </li>
         {/each}
     </ul>
+
+    <button class="load-more {isDivisibleBy25() ? 'visible' : 'hidden'}">Load More</button>
 </div>
