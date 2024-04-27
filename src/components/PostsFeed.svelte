@@ -2,8 +2,9 @@
     import { onMount } from 'svelte';
     import { writable } from 'svelte/store';
     import { URI } from "../enums/enums.js";
+    import Post from './Post.svelte'; // Import the Post component
 
-    class Post {
+    class PostData {
         constructor(id, posterUserName, topic, timeStamp, title, content, likeCount, dislikeCount, likedByMe, dislikedByMe, lastedEdited) {
             this.id = id;
             this.posterUserName = posterUserName;
@@ -22,13 +23,13 @@
     // Generate 25 sample posts
     let samplePosts = [];
     for (let i = 1; i <= 25; i++) {
-        samplePosts.push(new Post(i, `User${i}`, `Topic ${i}`, '2024-04-27', `Post ${i}`, `Content of post ${i}`, i * 2, i, i % 2 === 0, i % 3 === 0, null));
+        samplePosts.push(new PostData(i, `User${i}`, `Topic ${i}`, '2024-04-27', `Post ${i}`, `Content of post ${i}`, i * 2, i, i % 2 === 0, i % 3 === 0, null));
     }
 
     const posts = writable(samplePosts);
-
     const searchTerm = writable('');
     const orderBy = writable('');
+
     function filterPosts(post) {
         const term = $searchTerm.toLowerCase();
         return post.title.toLowerCase().includes(term);
@@ -54,9 +55,8 @@
 </script>
 
 <style>
-
     .post-view {
-        display: list-item;
+        display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
@@ -79,38 +79,23 @@
         text-align: center;
         max-height: max-content;
     }
-
-    li {
-        margin-bottom: 20px;
-        padding: 20px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        background-color: #f9f9f9;
-    }
-
-    h3 {
-        margin-bottom: 10px;
-    }
-
-    p {
-        color: #000000;
-    }
 </style>
 
-
-
 <div class="post-view">
-
-    <input type="text" bind:value={$searchTerm} placeholder="Search posts..." />
+    <div class="sort-search">
+        <input type="text" bind:value={$searchTerm} placeholder="Search posts..." />
+        <select bind:value={$orderBy}>
+            <option value="newest">Newest</option>
+            <option value="oldest">Oldest</option>
+            <option value="most-liked">Most Liked</option>
+            <option value="most-disliked">Most Disliked</option>
+        </select>
+    </div>
 
     <ul>
         {#each $posts.filter(filterPosts) as post}
             <li>
-                <h3>{post.title}</h3>
-                <p>{post.posterUserName}</p>
-                <p>{post.topic}</p>
-                <p>{post.content}</p>
-
+                <Post post={post}/>
             </li>
         {/each}
     </ul>

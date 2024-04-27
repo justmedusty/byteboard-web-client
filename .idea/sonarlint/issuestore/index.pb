@@ -45,3 +45,5 @@ J
 vite.config.js,2\3\23e488f27597a265a6ab2b1efbe18221c6f88c2f
 O
 src/components/PostsFeed.svelte,f\0\f0895d2feb1b72efe0b34042d3f4bcddcf0259cf
+J
+src/components/Post.svelte,8\c\8c8bc1f8408d158285c4ac6cd4c499fc66caa1cc
