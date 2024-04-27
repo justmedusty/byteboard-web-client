@@ -32,33 +32,18 @@
             component: ""
         },
         {
-            label: "About",
+            label: "Account Settings",
             value: 5,
+            component: ""
+        },
+        {
+            label: "About",
+            value: 6,
             component: ""
         }
     ];
 </script>
 <style>
-    /* Container styling */
-    .container {
-        display: list-item;
-        justify-content: center;
-        align-items: center;
-        height: max-content;
-        min-width: 100vh;
-        background-color: rgba(242, 242, 242, 0);
-
-    }
-
-    /* Form styling */
-    .form-container {
-        height: 80vh;
-        min-width: 80vh;
-        padding: 20px;
-        border-radius: 8px;
-        background-color: rgba(255, 255, 255, 0.54);
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
 
     .logout-footer {
         text-align: center; /* Center the contents horizontally */
@@ -71,7 +56,10 @@
 
 <div class="container">
     <div class="form-container">
-        <Tabs {items}/>
+        <div class="tabs">
+            <Tabs {items}/>
+        </div>
+
 
         <footer class ="logout-footer">
             <button class="logout" on:click={handleLogout}>Logout

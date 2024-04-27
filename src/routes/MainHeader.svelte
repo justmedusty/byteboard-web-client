@@ -1,9 +1,7 @@
 <header>
     <ul>
         <li>
-
             <h1 style="margin-bottom: 0">ByteBoard</h1>
-            <!-- Adjust margin and height as needed -->
         </li>
         <li>
             <h2 style="margin-left:1vb"> Programming, Web, Networking, Systems, Hardware.</h2>

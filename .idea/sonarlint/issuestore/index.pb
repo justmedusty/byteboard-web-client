@@ -33,3 +33,15 @@ G
 src/routes/+page.svelte,0\c\0cc7436e43646401331b342eb4c6db357ce6f5a9
 6
 .npmrc,1\2\12453d06e6e35287172e482940b954ba12dc25a2
+N
+src/routes/signup/+page.svelte,3\3\33da0b19cabf71e7b0caf128a8928f1feaf5e727
+T
+$src/routes/homepage/+homepage.svelte,6\5\65628f7cbd88feef29fd34205c29a10c52809c74
+P
+ src/routes/homepage/+page.svelte,2\d\2d9d83370d4abac56a73dc2fb3fd5face8793ae6
+J
+src/components/Tabs.svelte,a\9\a9cd634b5fb5910c004c2e56013929dab369ee90
+>
+vite.config.js,2\3\23e488f27597a265a6ab2b1efbe18221c6f88c2f
+O
+src/components/PostsFeed.svelte,f\0\f0895d2feb1b72efe0b34042d3f4bcddcf0259cf

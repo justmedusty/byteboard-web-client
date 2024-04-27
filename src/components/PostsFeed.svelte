@@ -28,7 +28,7 @@
     const posts = writable(samplePosts);
 
     const searchTerm = writable('');
-
+    const orderBy = writable('');
     function filterPosts(post) {
         const term = $searchTerm.toLowerCase();
         return post.title.toLowerCase().includes(term);
