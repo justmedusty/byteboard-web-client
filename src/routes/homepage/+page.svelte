@@ -5,6 +5,7 @@
     import PostsFeed from "../../components/PostsFeed.svelte";
     import ProfileViewer from "../../components/ProfileViewer.svelte";
     import About from "../../components/About.svelte";
+    import Notifications from "../../components/Notifications.svelte";
 
 
     function handleLogout() {
@@ -31,7 +32,7 @@
         {
             label: "Notifications",
             value: 4,
-            component: ""
+            component: Notifications
         },
         {
             label: "Account Settings",

@@ -38,7 +38,7 @@
     async function fetchPosts() {
         const term = $searchTerm;
         try {
-            const response = await fetch(URI.SEARCH_POSTS + `?search=${term}`);
+            const response = await fetch(URI.SEARCH_POSTS_FROM_USER + `?search=${term}`);
             if (!response.ok) {
                 alert("not okay")
             }

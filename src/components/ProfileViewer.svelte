@@ -79,6 +79,7 @@
         align-items: center; /* Vertically center */
         flex-direction: row;
         border-bottom: 1px solid #ccc;
+        text-align: center;
     }
 
 </style>
