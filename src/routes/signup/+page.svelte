@@ -124,10 +124,10 @@
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" placeholder="Enter your password" bind:value={password}>
 
-            <button type="submit">Login</button>
+            <button type="submit">Sign Up</button>
 
             <div class="switch-pages">
-                <a href="/login">Don't have an account? Sign up here</a>
+                <a href="/login">Have an account? Click here.</a>
             </div>
         </form>
     </div>

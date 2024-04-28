@@ -4,6 +4,7 @@
     import {deleteToken} from "../../auth/TokenHandling.js";
     import PostsFeed from "../../components/PostsFeed.svelte";
     import ProfileViewer from "../../components/ProfileViewer.svelte";
+    import About from "../../components/About.svelte";
 
 
     function handleLogout() {
@@ -40,7 +41,7 @@
         {
             label: "About",
             value: 6,
-            component: ""
+            component: About
         }
     ];
 </script>
