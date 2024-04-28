@@ -31,8 +31,6 @@
         }
     }
     function redirectToPost(postId) {
-        // Assuming you have a function to redirect to the post page with postId
-        // Replace this line with the actual logic to redirect
         alert("Going elsewhere")
     }
 

@@ -4,7 +4,7 @@
     import { URI } from "../enums/enums.js";
     import Post from './Post.svelte'; // Import the Post component
 
-    class PostData {
+   export class PostData {
         constructor(id, posterUserName, topic, timeStamp, title, content, likeCount, dislikeCount, likedByMe, dislikedByMe, lastedEdited) {
             this.id = id;
             this.posterUserName = posterUserName;
@@ -39,9 +39,6 @@
         const term = $searchTerm;
         try {
             const response = await fetch(URI.SEARCH_POSTS_FROM_USER + `?search=${term}`);
-            if (!response.ok) {
-                alert("not okay")
-            }
             const data = await response.json();
             posts.set(data.posts);
         } catch (error) {
@@ -50,7 +47,7 @@
     }
 
     onMount(() => {
-        fetchPosts(); // Initial fetch when component is mounted
+        fetchPosts();
     });
 
     // Function to check if the length of posts array is divisible by 25

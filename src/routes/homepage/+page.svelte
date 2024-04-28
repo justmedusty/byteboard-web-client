@@ -6,6 +6,7 @@
     import ProfileViewer from "../../components/ProfileViewer.svelte";
     import About from "../../components/About.svelte";
     import Notifications from "../../components/Notifications.svelte";
+    import PrivateMessageMainView from "../../components/PrivateMessageMainView.svelte";
 
 
     function handleLogout() {
@@ -22,7 +23,7 @@
         {
             label: "Private Messages",
             value: 2,
-            component: ""
+            component: PrivateMessageMainView
         },
         {
             label: "My Profile",

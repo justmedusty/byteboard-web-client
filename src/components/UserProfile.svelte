@@ -1,7 +1,7 @@
 <script>
 
     export let profileData = null;
-    class ProfileData {
+  export class ProfileData {
         constructor(userName, bio, publicKey, profilePhoto, autoEncrypt) {
             this.userName = userName;
             this.bio = bio;
