@@ -68,13 +68,13 @@
         flex-direction: column;
     }
 
-    .post:hover {
-        background-color: rgba(51, 51, 51, 0.6); /* Darken background color on hover */
-    }
 
     .post-content {
         flex-grow: 1; /* Grow to fill remaining space */
 
+    }
+    .post-content:hover{
+        background-color: rgba(0, 0, 0, 0.5);
     }
 
     .counts {

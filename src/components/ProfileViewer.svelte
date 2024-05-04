@@ -1,4 +1,9 @@
 <script>
+    import CommentsView from "./CommentsView.svelte";
+    import CompactPostView from "./CompactPostView.svelte";
+    import PrivateMessageMessageView from "./PrivateMessageMessageView.svelte";
+    import CompactSendMessage from "./CompactSendMessage.svelte";
+
     let userId = 'exampleUserId';
 
     async function fetchProfileData(userId) {
@@ -14,8 +19,26 @@
         }
     }
 
-    let profileData = null;
+    let showComments = false
+    let showPosts = false
+    let sendMessage = false
+    async function onViewCommentsClick() {
+        sendMessage = false
+        showPosts = false
+        showComments = !showComments;
+    }
+    async function onSendMessageClick() {
+        showPosts = false
+        showComments = false
+        sendMessage = !sendMessage
+    }
+    async function onViewPostsClick() {
+        sendMessage = false
+        showComments = false
+        showPosts = !showPosts
+    }
 
+    let profileData = null;
     (async () => {
         profileData = await fetchProfileData(userId);
     })();
@@ -129,8 +152,18 @@
         </div>
     {/if}
     <div class="button-row">
-        <button class="profile-button">View Posts</button>
-        <button class="profile-button">View Comments</button>
-        <button class="profile-button">Send Message</button>
+        <button class="profile-button" on:click={onViewPostsClick}>View Posts</button>
+        <button class="profile-button" on:click={onViewCommentsClick}>View Comments</button>
+        <button class="profile-button" on:click={onSendMessageClick}>Send Message</button>
     </div>
+    {#if showComments}
+        <CommentsView />
+    {/if}
+    {#if showPosts}
+        <CompactPostView />
+    {/if}
+    {#if sendMessage}
+        <CompactSendMessage />
+    {/if}
+
 </div>

@@ -37,11 +37,13 @@
         selectedUser = !selectedUser;
     }
 </script>
-
 <style>
     .user-profile {
         background-color: rgba(51, 51, 51, 0.41);
         margin-bottom: 25px;
+    }
+    .user-profile:hover {
+        background-color: rgba(0, 0, 0, 0.5);
     }
 
     .user-profile-detail-overlay {
@@ -61,9 +63,28 @@
         padding: 20px;
         border-radius: 5px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center horizontally */
+    }
+
+    .close {
+        align-self: flex-end; /* Align to the right */
+        margin-bottom: 10px; /* Add some space */
+        background-color: red;
+    }
+
+    .message-bar {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 10px; /* Add some space */
+    }
+
+    .message-input {
+        margin-right: 10px; /* Add some space between input and button */
     }
 </style>
-
 <div>
     {#each users as user}
         <div class="user-profile" on:click={() => handleClick(user)}>
@@ -75,7 +96,6 @@
                 <p>{user.bio}</p>
                 <p>Auto Encrypt: {user.autoEncrypt ? 'Yes' : 'No'}</p>
             </div>
-            <button on:click={openOrCloseMessage}>Open</button>
         </div>
     {/each}
 

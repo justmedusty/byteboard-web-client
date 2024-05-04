@@ -13,17 +13,16 @@ for (let i = 1; i <= 50; i++) {
     overflow-y: auto;
     max-height: 60vb;
 }
+
 </style>
 
 <div>
-
-
 <div class="message-view">
     {#each sampleMessages as message}
-        <div class="user-profile">
+        <div class="message">
             <div class="2">
                 <p>{message.message}</p>
-                <p>Timestamp: {message.timeStamp}</p>
+                <p>Timestamp: {message.timeSent}</p>
             </div>
         </div>
     {/each}
