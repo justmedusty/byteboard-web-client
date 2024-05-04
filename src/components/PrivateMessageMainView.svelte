@@ -1,16 +1,8 @@
 <script>
-    // Define ProfileData class
-
-
     import { onMount } from "svelte";
     import {ProfileData} from '../datastructs/ProfileData.js';
     import PrivateMessageMessageView from "./PrivateMessageMessageView.svelte";
 
-    let selectedUser = false
-
-    function openOrCloseMessage(){
-        selectedUser = !selectedUser
-    }
     function generateRandomProfileData() {
         const names = ["Alice", "Bob", "Charlie", "David", "Eva"];
         const bios = ["Frontend Developer", "Backend Developer", "Designer", "Data Scientist", "Software Engineer"];
@@ -29,15 +21,46 @@
         );
     }
 
-    let users =Array.from({ length: 5 }, () => generateRandomProfileData());
+    let users = Array.from({ length: 5 }, () => generateRandomProfileData());
 
+    let selectedUser = null;
+
+    function handleClick(user) {
+        selectedUser = user;
+    }
+
+    function handleClose() {
+        selectedUser = null;
+    }
+
+    function openOrCloseMessage() {
+        selectedUser = !selectedUser;
+    }
 </script>
 
 <style>
-    .user-profile{
+    .user-profile {
         background-color: rgba(51, 51, 51, 0.41);
         margin-bottom: 25px;
+    }
 
+    .user-profile-detail-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .user-profile-detail {
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     }
 </style>
 
@@ -59,7 +82,12 @@
     {#if selectedUser}
         <div class="user-profile-detail-overlay">
             <div class="user-profile-detail">
-                <PrivateMessageMessageView />
+                <button class="close" on:click={openOrCloseMessage}>X</button>
+                <PrivateMessageMessageView user={selectedUser} on:close={handleClose} />
+                <div class="message-bar">
+                    <input class="message-input">
+                    <button>Send</button>
+                </div>
             </div>
         </div>
     {/if}
