@@ -4,7 +4,13 @@
 
     import { onMount } from "svelte";
     import {ProfileData} from '../datastructs/ProfileData.js';
+    import PrivateMessageMessageView from "./PrivateMessageMessageView.svelte";
 
+    let selectedUser = false
+
+    function openOrCloseMessage(){
+        selectedUser = !selectedUser
+    }
     function generateRandomProfileData() {
         const names = ["Alice", "Bob", "Charlie", "David", "Eva"];
         const bios = ["Frontend Developer", "Backend Developer", "Designer", "Data Scientist", "Software Engineer"];
@@ -37,15 +43,24 @@
 
 <div>
     {#each users as user}
-        <div class="user-profile">
-            <div>
+        <div class="user-profile" on:click={() => handleClick(user)}>
+            <div class="profile-image">
                 <img src="{user.profilePhoto}" alt="{user.userName}" />
             </div>
-            <div>
+            <div class="profile-info">
                 <h3>{user.userName}</h3>
                 <p>{user.bio}</p>
                 <p>Auto Encrypt: {user.autoEncrypt ? 'Yes' : 'No'}</p>
             </div>
+            <button on:click={openOrCloseMessage}>Open</button>
         </div>
     {/each}
+
+    {#if selectedUser}
+        <div class="user-profile-detail-overlay">
+            <div class="user-profile-detail">
+                <PrivateMessageMessageView />
+            </div>
+        </div>
+    {/if}
 </div>

@@ -15,8 +15,6 @@ L
 src/routes/MainHeader.svelte,8\e\8eca2e635450e04eef7cabb2dc6aa91c9ff5eae7
 I
 src/routes/+layout.svelte,5\7\57bd45b2d1884d7c824dd9391c6e95fe5ea8b351
-C
-src/routes/+page.js,f\5\f5a25bc7815568c939e1403aba65a64d1316312f
 <
 package.json,7\0\7030d0b2f71b999ff89a343de08c414af32fc93a
 A
@@ -35,8 +33,6 @@ G
 .npmrc,1\2\12453d06e6e35287172e482940b954ba12dc25a2
 N
 src/routes/signup/+page.svelte,3\3\33da0b19cabf71e7b0caf128a8928f1feaf5e727
-T
-$src/routes/homepage/+homepage.svelte,6\5\65628f7cbd88feef29fd34205c29a10c52809c74
 P
  src/routes/homepage/+page.svelte,2\d\2d9d83370d4abac56a73dc2fb3fd5face8793ae6
 J
@@ -47,3 +43,25 @@ O
 src/components/PostsFeed.svelte,f\0\f0895d2feb1b72efe0b34042d3f4bcddcf0259cf
 J
 src/components/Post.svelte,8\c\8c8bc1f8408d158285c4ac6cd4c499fc66caa1cc
+Q
+!src/components/UserProfile.svelte,f\f\ff4129fbffef83e3c4aad970f619b3fd621172e3
+S
+#src/components/ProfileViewer.svelte,9\3\931b34bfa2a46f0ea09a4add66b507548fab1b16
+K
+src/components/About.svelte,6\9\69026d1468c113edf7c64c32dc6cc942091eec7f
+S
+#src/components/Notifications.svelte,b\c\bc000bd9ad560d774cddc70101383649f2e69d2a
+\
+,src/components/PrivateMessageMainView.svelte,1\4\147a2fef22148f7909d0779ebee40df7a4e41431
+_
+/src/components/PrivateMessageMessageView.svelte,a\0\a081166310de6b401cb40d3f321077a4b54bb670
+U
+%src/components/AccountSettings.svelte,3\1\31dc5649b0d152a2314fd83f44604e20f0995465
+N
+src/datastructs/ProfileData.js,d\c\dc38325190ea3676be920005cd485ad0941c7f9b
+G
+src/datastructs/Post.js,0\c\0c2493f7a9ab46f494f435135990e4faf5442fde
+J
+src/datastructs/Comment.js,b\1\b158df877ceb387275650da68be370c4ee5c9aec
+J
+src/datastructs/Message.js,c\b\cbd666ff3c6993b1e788c705c948493588dd3ca6
