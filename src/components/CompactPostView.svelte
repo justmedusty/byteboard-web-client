@@ -45,13 +45,15 @@
 
 <style>
     .post-view {
-        display: flex;
+        display: grid;
         justify-content: center;
         align-items: center;
         flex-direction: column;
         overflow-y: auto;
         min-width: 40vw;
         margin: 50px;
+        max-height: 60vh;
+        overflow-y: auto;
     }
 
     ul {
